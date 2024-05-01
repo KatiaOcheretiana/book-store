@@ -1,5 +1,18 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import "modern-normalize";
+
+import { createTheme } from "@mui/material/styles";
+
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#004d40",
+    },
+    textLayout: {
+      main: "#ffff",
+    },
+  },
+});
 
 export const GlobalStyle = createGlobalStyle`
 html {
@@ -60,9 +73,4 @@ img {
   height: auto;
 }
 
-`;
-
-export const Container = styled.div`
-  padding: 0 90px;
-  margin: 150px auto;
 `;
