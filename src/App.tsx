@@ -5,7 +5,8 @@ import { useDispatch } from "react-redux";
 import { getBooks } from "./redux/books/operations";
 import { AppDispatch } from "./redux/store";
 
-const Books = lazy(() => import("./pages/Books"));
+const BooksPage = lazy(() => import("./pages/BooksPage"));
+const CartPage = lazy(() => import("./pages/CartPage"));
 
 function App() {
   const dispatch: AppDispatch = useDispatch();
@@ -17,8 +18,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Books />} />
-        <Route path="/basket" element={<h1>basket</h1>} />
+        <Route index element={<BooksPage />} />
+        <Route path="/basket" element={<CartPage />} />
       </Route>
       <Route path="*" element={<h1>Home</h1>} />
     </Routes>

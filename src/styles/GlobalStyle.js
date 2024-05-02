@@ -1,5 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 import "modern-normalize";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 import { createTheme } from "@mui/material/styles";
 
@@ -10,6 +14,9 @@ export const theme = createTheme({
     },
     textLayout: {
       main: "#ffff",
+    },
+    textSpan: {
+      main: "rgba(17, 16, 28, 0.5)",
     },
   },
 });
@@ -60,7 +67,7 @@ img {
 
 body {
   margin: 0 ;
-   font-family: sans-serif;
+   font-family: Roboto, sans-serif;
   color: black;
 
   -webkit-font-smoothing: antialiased;
