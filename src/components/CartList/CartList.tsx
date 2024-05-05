@@ -2,10 +2,6 @@ import { Button, Grid } from "@mui/material";
 import { Book } from "../../types";
 import { BookDetails } from "../BookDetails/BookDetails";
 import { useDispatch } from "react-redux";
-// import {
-//   selectCartBooks,
-//   selectCartBooksIdAmound,
-// } from "../../redux/cart/selectors";
 import {
   decreaceAmount,
   deleteFromCart,
@@ -18,14 +14,6 @@ type CartListPropsType = {
 
 export const CartList = ({ booksData }: CartListPropsType) => {
   const dispatch = useDispatch();
-
-  // const info = useSelector(selectCartBooksIdAmound);
-
-  // console.log(info);
-
-  // const selectCartBookss = useSelector(selectCartBooks);
-
-  // console.log(selectCartBookss);
 
   return (
     <Grid

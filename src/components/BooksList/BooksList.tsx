@@ -2,7 +2,11 @@ import { Button, Grid } from "@mui/material";
 import { Book } from "../../types";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import { useDispatch } from "react-redux";
-import { addToCart, storageKey } from "../../redux/cart/cartSlice";
+import {
+  addToCart,
+  increaceAmount,
+  storageKey,
+} from "../../redux/cart/cartSlice";
 import { BookDetails } from "../BookDetails/BookDetails";
 
 type BooksListPropsType = {
@@ -14,19 +18,20 @@ export const BooksList = ({ booksData }: BooksListPropsType) => {
 
   const handleAddToCart = (_id: string) => {
     const booksInCartString = localStorage.getItem(storageKey);
+
     const booksInCart: string[] = booksInCartString
       ? JSON.parse(booksInCartString)
       : [];
 
     const isBookInCart = booksInCart.includes(_id);
 
-    if (isBookInCart) {
-      console.log("already in cart");
-    } else {
-      const updatedBooksInCart = [...booksInCart, { _id, amount: 1 }];
+    if (!isBookInCart) {
+      const updatedBooksInCart = [...booksInCart, _id];
       localStorage.setItem(storageKey, JSON.stringify(updatedBooksInCart));
 
       dispatch(addToCart(_id));
+    } else {
+      dispatch(increaceAmount(_id));
     }
   };
 

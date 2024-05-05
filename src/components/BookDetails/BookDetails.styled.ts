@@ -4,29 +4,59 @@ type ItemBoxProps = {
   isCart?: boolean;
 };
 
+// export const ItemBox = styled.div<ItemBoxProps>`
+//   height: 100%;
+//   padding: 20px;
+//   border-radius: 24px;
+//   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+//     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+//   display: flex;
+//   flex-direction: ${(props) => (props.isCart ? "row" : "column")};
+//   gap: ${(props) => (props.isCart ? "20px" : "0")};
+
+//   max-width: ${(props) => (props.isCart ? "800px" : "auto")};
+
+//   align-items: center;
+//   justify-content: space-between;
+
+//   cursor: pointer;
+
+//   transition: all 0.2s ease-in-out;
+
+//   &:hover {
+//     transform: ${(props) => (props.isCart ? "scale(1)x" : "scale(1.1)")};
+//   }
+// `;
+
 export const ItemBox = styled.div<ItemBoxProps>`
   height: 100%;
   padding: 20px;
   border-radius: 24px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
-
   display: flex;
-  flex-direction: ${(props) => (props.isCart ? "row" : "column")};
-  gap: ${(props) => (props.isCart ? "20px" : "0")};
-
-  max-width: ${(props) => (props.isCart ? "800px" : "auto")};
-
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
-
-  cursor: pointer;
-
   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    transform: ${(props) => (props.isCart ? "scale(1)x" : "scale(1.1)")};
-  }
+  ${({ isCart }) =>
+    isCart
+      ? `
+        flex-direction: column;
+        @media screen and (min-width: 768px) {
+        flex-direction: row;
+        max-width: 800px;
+        }
+      `
+      : `
+        flex-direction: column;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      `}
 `;
 
 export const CardTextContent = styled.div`

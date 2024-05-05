@@ -18,6 +18,9 @@ export const theme = createTheme({
     textSpan: {
       main: "rgba(17, 16, 28, 0.5)",
     },
+    secondary: {
+      main: "#ffc107",
+    },
   },
 });
 
@@ -78,6 +81,13 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 `;
