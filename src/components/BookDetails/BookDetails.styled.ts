@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const ItemBox = styled.div`
+type ItemBoxProps = {
+  isCart?: boolean;
+};
+
+export const ItemBox = styled.div<ItemBoxProps>`
   height: 100%;
   padding: 20px;
   border-radius: 24px;
@@ -8,7 +12,11 @@ export const ItemBox = styled.div`
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props) => (props.isCart ? "row" : "column")};
+  gap: ${(props) => (props.isCart ? "20px" : "0")};
+
+  max-width: ${(props) => (props.isCart ? "800px" : "auto")};
+
   align-items: center;
   justify-content: space-between;
 
@@ -17,7 +25,7 @@ export const ItemBox = styled.div`
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: scale(1.1);
+    transform: ${(props) => (props.isCart ? "scale(1)x" : "scale(1.1)")};
   }
 `;
 

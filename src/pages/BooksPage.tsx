@@ -6,10 +6,8 @@ import { Container } from "@mui/material";
 const BooksPage = () => {
   const booksData = useSelector(selectBooks);
 
-  console.log(booksData);
-
   return (
-    <Container style={{ marginTop: "110px" }}>
+    <Container style={{ marginTop: "110px", marginBottom: "100px" }}>
       <BooksList booksData={booksData} />
     </Container>
   );

@@ -1,21 +1,18 @@
 import { useSelector } from "react-redux";
 import { selectCartBooks } from "../redux/cart/selectors";
 import { Container } from "@mui/material";
-import { selectBooks } from "../redux/books/selectors";
+import { CartList } from "../components/CartList/CartList";
 
 const CartPage = () => {
-  const booksIdCart = useSelector(selectCartBooks);
-  // console.log(booksIdCart);
+  const booksInCart = useSelector(selectCartBooks);
 
-  const books = useSelector(selectBooks);
+  return (
+    <Container style={{ marginTop: "110px", marginBottom: "100px" }}>
+      <CartList booksData={booksInCart} />
 
-  // console.log(books);
-
-  const booksInCart = books.filter((book) => booksIdCart.includes(book._id));
-
-  console.log(booksInCart);
-
-  return <Container>{/* <p>{booksInCart}</p> */}</Container>;
+      <h3>Total:</h3>
+    </Container>
+  );
 };
 
 export default CartPage;

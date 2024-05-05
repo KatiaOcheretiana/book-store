@@ -19,9 +19,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<BooksPage />} />
-        <Route path="/basket" element={<CartPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="*" element={<BooksPage />} />
       </Route>
-      <Route path="*" element={<h1>Home</h1>} />
     </Routes>
   );
 }

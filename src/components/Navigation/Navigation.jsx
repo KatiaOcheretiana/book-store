@@ -13,7 +13,7 @@ export const Navigation = () => {
             </StyledLink>
           </Grid>
           <Grid item>
-            <StyledLink to="/basket">
+            <StyledLink to="/cart">
               <AddShoppingCartOutlinedIcon
                 color="textLayout"
                 fontSize="medium"

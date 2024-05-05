@@ -5,6 +5,7 @@ export interface Book {
   description: string;
   price: string;
   title: string;
+  amount?: number;
 }
 
 export interface BooksState {
