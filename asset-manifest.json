@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/book-store/static/css/main.d9f0b9e2.css",
-    "main.js": "/book-store/static/js/main.4eaae1c6.js",
-    "static/js/889.9b249229.chunk.js": "/book-store/static/js/889.9b249229.chunk.js",
-    "static/js/835.c44a9ce0.chunk.js": "/book-store/static/js/835.c44a9ce0.chunk.js",
+    "main.js": "/book-store/static/js/main.dac3a5ac.js",
+    "static/js/234.714bb226.chunk.js": "/book-store/static/js/234.714bb226.chunk.js",
+    "static/js/514.1ac31979.chunk.js": "/book-store/static/js/514.1ac31979.chunk.js",
     "static/js/453.b6117f4a.chunk.js": "/book-store/static/js/453.b6117f4a.chunk.js",
     "static/js/985.47c2f3af.chunk.js": "/book-store/static/js/985.47c2f3af.chunk.js",
     "static/media/roboto-latin-500-normal.woff2": "/book-store/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
@@ -64,14 +64,14 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/book-store/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/book-store/index.html",
     "main.d9f0b9e2.css.map": "/book-store/static/css/main.d9f0b9e2.css.map",
-    "main.4eaae1c6.js.map": "/book-store/static/js/main.4eaae1c6.js.map",
-    "889.9b249229.chunk.js.map": "/book-store/static/js/889.9b249229.chunk.js.map",
-    "835.c44a9ce0.chunk.js.map": "/book-store/static/js/835.c44a9ce0.chunk.js.map",
+    "main.dac3a5ac.js.map": "/book-store/static/js/main.dac3a5ac.js.map",
+    "234.714bb226.chunk.js.map": "/book-store/static/js/234.714bb226.chunk.js.map",
+    "514.1ac31979.chunk.js.map": "/book-store/static/js/514.1ac31979.chunk.js.map",
     "453.b6117f4a.chunk.js.map": "/book-store/static/js/453.b6117f4a.chunk.js.map",
     "985.47c2f3af.chunk.js.map": "/book-store/static/js/985.47c2f3af.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d9f0b9e2.css",
-    "static/js/main.4eaae1c6.js"
+    "static/js/main.dac3a5ac.js"
   ]
 }
