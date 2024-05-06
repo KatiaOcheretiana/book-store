@@ -29,20 +29,19 @@
       var search = l.search;
       var hash = l.hash;
 
-      l.replace(
-        l.protocol +
-          "//" +
-          l.hostname +
-          (l.port ? ":" + l.port : "") +
-          l.pathname
-            .split("/")
-            .slice(0, 1 + pathSegmentsToKeep)
-            .join("/") +
-          "/" +
-          (path ? path : "") +
-          (search ? search : "") +
-          (hash ? hash : "")
-      );
+      var newPath =
+        (path ? "/" + path : "") + (search ? search : "") + (hash ? hash : "");
+
+      if (newPath !== l.pathname + l.search + l.hash) {
+        l.replace(
+          l.protocol +
+            "//" +
+            l.hostname +
+            (l.port ? ":" + l.port : "") +
+            "/?" +
+            newPath
+        );
+      }
     </script>
   </head>
   <body></body>
