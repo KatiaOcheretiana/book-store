@@ -35,10 +35,12 @@ export const UserForm = () => {
       }}
       validationSchema={UserSchema}
       onSubmit={(values, actions) => {
-        dispatch(
-          orderBooks({ userInfo: values, books: booksInCart, totalPrice })
-        );
+        const data = { userInfo: values, books: booksInCart, totalPrice };
+
+        dispatch(orderBooks(data));
         actions.resetForm();
+
+        console.log(JSON.stringify(data));
       }}
     >
       {({ errors, touched }) => (

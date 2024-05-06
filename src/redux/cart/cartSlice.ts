@@ -62,7 +62,7 @@ const cartSlice = createSlice({
     builder.addCase(orderBooks.fulfilled, (state: Draft<CartSliceType>) => {
       state.cartBooks = [];
       localStorage.clear();
-      alert("The order will be saved in Firebase");
+      alert("The order will be saved in Firebase. The JSON watch in console");
     });
   },
 });
