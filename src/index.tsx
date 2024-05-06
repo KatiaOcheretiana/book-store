@@ -15,16 +15,16 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={<Loader />} persistor={persistor}>
-        <BrowserRouter basename="/book-store">
-          <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <PersistGate loading={<Loader />} persistor={persistor}>
+          <BrowserRouter basename="/book-store">
             <App />
-          </ThemeProvider>
-        </BrowserRouter>
-        <GlobalStyle />
-      </PersistGate>
-    </Provider>
+          </BrowserRouter>
+          <GlobalStyle />
+        </PersistGate>
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
