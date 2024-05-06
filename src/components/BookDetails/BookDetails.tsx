@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { Book } from "../../types";
 import {
   BookImg,
@@ -7,6 +8,10 @@ import {
   Text,
   Title,
 } from "./BookDetails.styled";
+import {
+  selectCurrentCarrencyValue,
+  selectSymbolCurrency,
+} from "../../redux/currency/selectors";
 
 type BookDetailsPropsType = {
   children: React.ReactNode;
@@ -20,6 +25,11 @@ export const BookDetails = ({
   isCart,
 }: BookDetailsPropsType) => {
   const { author, book_image, description, price, title } = book;
+  const currencySymbol = useSelector(selectSymbolCurrency);
+
+  const carrencyValue = useSelector(selectCurrentCarrencyValue);
+
+  const priceByCurrency = Math.round(Number(price) * carrencyValue);
 
   return (
     <ItemBox isCart={isCart}>
@@ -33,7 +43,8 @@ export const BookDetails = ({
           <CardDescription>Description:</CardDescription> {description}
         </Text>
         <Text>
-          <CardDescription>Price:</CardDescription> {price} $
+          <CardDescription>Price:</CardDescription> {priceByCurrency}{" "}
+          {currencySymbol}
         </Text>
       </CardTextContent>
       {children}

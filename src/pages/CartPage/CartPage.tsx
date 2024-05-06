@@ -10,6 +10,10 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { LinkBack, PriceText } from "./CartPage.styled";
 import { UserForm } from "../../components/UserForm/UserForm";
 import { Loader } from "../../components/Loader";
+import {
+  selectCurrentCarrencyValue,
+  selectSymbolCurrency,
+} from "../../redux/currency/selectors";
 
 const CartPage = () => {
   const booksInCart = useSelector(selectCartBooks);
@@ -18,8 +22,13 @@ const CartPage = () => {
 
   const isLoading = useSelector(selectIsLoading);
 
+  const currencySymbol = useSelector(selectSymbolCurrency);
+
+  const carrencyValue = useSelector(selectCurrentCarrencyValue);
+  const priceByCurrency = Math.round(totalPrice * carrencyValue);
+
   return (
-    <Container style={{ marginTop: "80px", marginBottom: "100px" }}>
+    <Container style={{ marginTop: "100px", marginBottom: "100px" }}>
       <LinkBack to={"/"}>
         <ArrowBackIosNewIcon color="primary" fontSize="small" />
         <p> Go back</p>
@@ -37,7 +46,9 @@ const CartPage = () => {
         >
           <Grid item>
             <CartList booksData={booksInCart} />
-            <PriceText>TOTAL: {totalPrice} $</PriceText>
+            <PriceText>
+              TOTAL: {priceByCurrency} {currencySymbol}
+            </PriceText>
           </Grid>
           <UserForm />
         </Grid>

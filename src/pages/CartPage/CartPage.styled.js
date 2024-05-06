@@ -23,6 +23,8 @@ export const LinkBack = styled(Link)`
 `;
 
 export const PriceText = styled.p`
+  font-size: 24px;
+  line-height: 150%;
   margin-top: 40px;
   text-decoration: underline;
 `;

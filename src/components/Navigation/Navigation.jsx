@@ -3,9 +3,18 @@ import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutl
 import { StyledLink } from "./Navigation.styled";
 import { useSelector } from "react-redux";
 import { selectTotalPrice } from "../../redux/cart/selectors";
+import { CurrencySelector } from "../CurrencySelector/CurrencySelector";
+import {
+  selectCurrentCarrencyValue,
+  selectSymbolCurrency,
+} from "../../redux/currency/selectors";
 
 export const Navigation = () => {
   const totalPrice = useSelector(selectTotalPrice);
+  const currencySymbol = useSelector(selectSymbolCurrency);
+
+  const carrencyValue = useSelector(selectCurrentCarrencyValue);
+  const priceByCurrency = Math.round(totalPrice * carrencyValue);
 
   return (
     <AppBar position="fixed" color="primary">
@@ -19,17 +28,18 @@ export const Navigation = () => {
 
           <Grid
             container
-            width={"140px"}
+            width={"240px"}
             justifyContent="flex-end"
             gap={"20px"}
             alignItems="center"
           >
+            <CurrencySelector />
             {totalPrice !== 0 && (
               <Box>
                 {" "}
                 <Typography variant="body1">Total price:</Typography>
                 <Typography variant="body1" color="secondary">
-                  {totalPrice} $
+                  {priceByCurrency} {currencySymbol}
                 </Typography>
               </Box>
             )}

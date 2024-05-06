@@ -12,6 +12,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import { cartReducer } from "./cart/cartSlice";
 import { booksReducer } from "./books/booksSlice";
+import { currencyReducer } from "./currency/carrencySlice";
 
 const cartPersistConfig = {
   key: "cart",
@@ -21,6 +22,7 @@ const cartPersistConfig = {
 const reducers = combineReducers({
   cart: persistReducer<any>(cartPersistConfig, cartReducer),
   books: booksReducer,
+  currency: currencyReducer,
 });
 
 export const store = configureStore({

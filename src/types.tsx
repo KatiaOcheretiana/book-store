@@ -13,3 +13,10 @@ export interface BooksState {
   isLoading: boolean;
   error: string | null;
 }
+
+export type CurrencyType = {
+  UAH: number;
+  PLN: number;
+  EUR: number;
+  USD: number;
+};

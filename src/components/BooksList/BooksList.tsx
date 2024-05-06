@@ -49,7 +49,7 @@ export const BooksList = ({ booksData }: BooksListPropsType) => {
               endIcon={<AddShoppingCartOutlinedIcon />}
               onClick={() => handleAddToCart(book._id)}
             >
-              Add to cart
+              Buy/add
             </Button>
           </BookDetails>
         </Grid>

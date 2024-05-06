@@ -22,6 +22,8 @@ export const CartList = ({ booksData }: CartListPropsType) => {
       justifyContent="flex-start"
       alignItems="flex-start"
       spacing={5}
+      // spacing={{ xs: 2, md: 6 }}
+      columns={{ xs: 4, sm: 8, md: 12 }}
     >
       {booksData.map((book) => (
         <Grid item key={book._id}>
