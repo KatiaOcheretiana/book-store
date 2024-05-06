@@ -21,7 +21,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<BooksPage />} />
-        <Route path="cart" element={<CartPage />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="*" element={<BooksPage />} />
       </Route>
     </Routes>
