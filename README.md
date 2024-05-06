@@ -24,15 +24,39 @@ This is a simple book store application built using React.js and Redux. Users ca
 - Store JSON in Firebase collection with ordered goods and user information.
 - Implemented currency selector to allow users to change the currency.
 
-![Preview]("./public/ImagesForReadme/Знімок екрана 2024-05-06 160049.png")
-![Preview]("./public/ImagesForReadme/Знімок екрана 2024-05-06 160105.png")
+![Preview]("./public/ImagesForReadme/book-page.png")
+![Preview]("./public/ImagesForReadme/cart-page.png")
 
-## Get Started
+## How to Use
 
-To run the application locally, follow these steps:
+### Cloning the Repository
 
-Clone the repository: git clone https://github.com/KatiaOcheretiana/book-store
-Install yarn: npm i yarn
-Install dependencies: yarn
-Start the development server: yarn start
-Open your preferred web browser and navigate to http://localhost:3000
+1. Clone the repository from GitHub using the following command:
+
+```bash
+  git clone https://github.com/KatiaOcheretiana/book-store
+```
+
+### Installing Dependencies
+
+2. Navigate to the project directory:
+
+```bash
+ cd campers-ukraine
+```
+
+3. Install dependencies using yarn:
+
+```bash
+yarn add
+```
+
+### Starting the Application
+
+4. Once the dependencies are installed, start the application using:
+
+```bash
+yarn start
+```
+
+5. The application will start running locally, and you can access it via your web browser at `http://localhost:3000`.
