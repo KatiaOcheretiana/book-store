@@ -21,14 +21,13 @@ export const ItemBox = styled.div<ItemBoxProps>`
   ${({ isCart }) =>
     isCart
       ? `
-     max-width:288px;
+   width:288px;
         @media screen and (min-width: 1440px) {
         flex-direction: row;
-        max-width: 800px;
+       width: 800px;
         }
       `
       : `
-       
         cursor: pointer;
         &:hover {
           transform: scale(1.1);

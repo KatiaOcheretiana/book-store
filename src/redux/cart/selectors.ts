@@ -30,5 +30,3 @@ export const selectTotalPrice = createSelector([selectCartBooks], (books) => {
 
   return totalPrice;
 });
-
-export const selectIsLoading = (state: RootState) => state.cart.isLoading;

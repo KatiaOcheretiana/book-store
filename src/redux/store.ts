@@ -14,13 +14,13 @@ import { cartReducer } from "./cart/cartSlice";
 import { booksReducer } from "./books/booksSlice";
 import { currencyReducer } from "./currency/carrencySlice";
 
-const cartPersistConfig = {
+const persistConfig = {
   key: "cart",
   storage,
 };
 
 const reducers = combineReducers({
-  cart: persistReducer<any>(cartPersistConfig, cartReducer),
+  cart: persistReducer<any>(persistConfig, cartReducer),
   books: booksReducer,
   currency: currencyReducer,
 });

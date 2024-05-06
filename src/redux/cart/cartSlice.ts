@@ -10,8 +10,6 @@ type CartBooksType = {
 
 type CartSliceType = {
   cartBooks: CartBooksType[];
-  isLoading: boolean;
-  error: string | null;
 };
 
 const getInitialCart = (): CartBooksType[] => {
@@ -21,8 +19,6 @@ const getInitialCart = (): CartBooksType[] => {
 
 const initialState: CartSliceType = {
   cartBooks: getInitialCart(),
-  isLoading: false,
-  error: null,
 };
 
 const cartSlice = createSlice({
@@ -63,26 +59,11 @@ const cartSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder
-      .addCase(orderBooks.pending, (state) => {
-        state.isLoading = true;
-      })
-
-      .addCase(orderBooks.fulfilled, (state: Draft<CartSliceType>) => {
-        state.isLoading = false;
-        state.error = null;
-        state.cartBooks = [];
-        localStorage.clear();
-        alert("The order will be saved in Firebase");
-      })
-
-      .addCase(
-        orderBooks.rejected,
-        (state: Draft<CartSliceType>, action: PayloadAction<any>) => {
-          state.isLoading = false;
-          state.error = action.payload as string | null;
-        }
-      );
+    builder.addCase(orderBooks.fulfilled, (state: Draft<CartSliceType>) => {
+      state.cartBooks = [];
+      localStorage.clear();
+      alert("The order will be saved in Firebase");
+    });
   },
 });
 

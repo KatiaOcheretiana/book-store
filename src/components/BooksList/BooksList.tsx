@@ -1,13 +1,10 @@
 import { Button, Grid } from "@mui/material";
 import { Book } from "../../types";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
-import { useDispatch } from "react-redux";
-import {
-  addToCart,
-  increaceAmount,
-  storageKey,
-} from "../../redux/cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, increaceAmount } from "../../redux/cart/cartSlice";
 import { BookDetails } from "../BookDetails/BookDetails";
+import { selectCartBooks } from "../../redux/cart/selectors";
 
 type BooksListPropsType = {
   booksData: Book[];
@@ -16,22 +13,15 @@ type BooksListPropsType = {
 export const BooksList = ({ booksData }: BooksListPropsType) => {
   const dispatch = useDispatch();
 
+  const booksInCart = useSelector(selectCartBooks);
+
   const handleAddToCart = (_id: string) => {
-    const booksInCartString = localStorage.getItem(storageKey);
+    const existingBook = booksInCart.find((book) => book._id === _id);
 
-    const booksInCart: string[] = booksInCartString
-      ? JSON.parse(booksInCartString)
-      : [];
-
-    const isBookInCart = booksInCart.includes(_id);
-
-    if (!isBookInCart) {
-      const updatedBooksInCart = [...booksInCart, _id];
-      localStorage.setItem(storageKey, JSON.stringify(updatedBooksInCart));
-
-      dispatch(addToCart(_id));
-    } else {
+    if (existingBook) {
       dispatch(increaceAmount(_id));
+    } else {
+      dispatch(addToCart(_id));
     }
   };
 

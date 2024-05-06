@@ -22,7 +22,7 @@ export const Navigation = () => {
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item>
             <StyledLink to="/" color="textLayout">
-              Book shop
+              Book store
             </StyledLink>
           </Grid>
 
@@ -36,7 +36,6 @@ export const Navigation = () => {
             <CurrencySelector />
             {totalPrice !== 0 && (
               <Box>
-                {" "}
                 <Typography variant="body1">Total price:</Typography>
                 <Typography variant="body1" color="secondary">
                   {priceByCurrency} {currencySymbol}

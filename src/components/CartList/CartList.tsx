@@ -18,18 +18,16 @@ export const CartList = ({ booksData }: CartListPropsType) => {
   return (
     <Grid
       container
-      direction="column"
-      justifyContent="flex-start"
-      alignItems="flex-start"
-      spacing={5}
-      // spacing={{ xs: 2, md: 6 }}
-      columns={{ xs: 4, sm: 8, md: 12 }}
+      justifyContent="center"
+      alignItems="center"
+      spacing={{ xs: 2, md: 5 }}
+      columns={{ xs: 2, sm: 8 }}
     >
       {booksData.map((book) => (
         <Grid item key={book._id}>
           <BookDetails book={book} isCart>
             <Grid
-              width="350px"
+              width="310px"
               columnGap="10px"
               container
               direction="row"
@@ -38,6 +36,7 @@ export const CartList = ({ booksData }: CartListPropsType) => {
             >
               <Button
                 variant="contained"
+                size="small"
                 onClick={() => {
                   if (book.amount === 1) {
                     dispatch(deleteFromCart(book._id));
@@ -51,6 +50,7 @@ export const CartList = ({ booksData }: CartListPropsType) => {
               <p>{book.amount}</p>
               <Button
                 variant="contained"
+                size="small"
                 onClick={() => dispatch(increaceAmount(book._id))}
               >
                 +

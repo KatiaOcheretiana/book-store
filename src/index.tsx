@@ -6,7 +6,8 @@ import { GlobalStyle, theme } from "./styles/GlobalStyle";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { persistor, store } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,14 +15,14 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <PersistGate loading={null} persistor={persistor}> */}
-      <BrowserRouter basename="/book-store">
-        <ThemeProvider theme={theme}>
-          <App />
-        </ThemeProvider>
-      </BrowserRouter>
-      <GlobalStyle />
-      {/* </PersistGate> */}
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter basename="/book-store">
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </BrowserRouter>
+        <GlobalStyle />
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );
