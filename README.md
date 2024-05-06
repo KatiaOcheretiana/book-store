@@ -24,8 +24,9 @@ This is a simple book store application built using React.js and Redux. Users ca
 - Store JSON in Firebase collection with ordered goods and user information.
 - Implemented currency selector to allow users to change the currency.
 
-![Preview]("./public/ImagesForReadme/book-page.png")
-![Preview]("./public/ImagesForReadme/cart-page.png")
+![Preview](./public/ImagesForReadme/book-page.png)
+
+![Preview](./public/ImagesForReadme/cart-page.png)
 
 ## How to Use
 
@@ -42,7 +43,7 @@ This is a simple book store application built using React.js and Redux. Users ca
 2. Navigate to the project directory:
 
 ```bash
- cd campers-ukraine
+ cd book-store
 ```
 
 3. Install dependencies using yarn:
