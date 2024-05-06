@@ -28,6 +28,8 @@ This is a simple book store application built using React.js and Redux. Users ca
 
 ![Preview](./public/ImagesForReadme/cart-page.png)
 
+<video src='./public/ImagesForReadme/video-presentation.mp4' width=180></video>
+
 ## How to Use
 
 ### Cloning the Repository
